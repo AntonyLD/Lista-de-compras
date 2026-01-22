@@ -37,15 +37,19 @@ const cadastrar = () =>{
     if(indexEmEdicao !== null){
         
         produtos[indexEmEdicao] = {
+            
             nome: nomeProduto.value,
-            quantidade: Number(quantidadeProduto.value)
+            quantidade: Number(quantidadeProduto.value),
+            
         }
 
         indexEmEdicao = null
     } else {
         produtos.push({
+            id: 0,
             nome: nomeProduto.value,
-            quantidade: Number(quantidadeProduto.value)
+            quantidade: Number(quantidadeProduto.value),
+            quantidadeComprada: 0
         })
     }
 
