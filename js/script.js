@@ -5,24 +5,31 @@ const formularioProduto = document.querySelector("#formulario-produto")
 const listaDeProdutos = document.querySelector("#lista-de-produtos")
 const btnComprar = document.querySelector("#btn-comprar")
 
+
 const mostrarProdutos = () =>{
     listaDeProdutos.innerHTML = "";
 
     const produtos = JSON.parse(localStorage.getItem("produtos")) || []
+    const compras = JSON.parse(localStorage.getItem("compras")) || []
 
-    produtos.forEach((produto, index) => {
+
+    produtos.forEach((produto) => {
         const item = document.createElement("div")
 
         item.innerHTML = 
+        item.innerHTML = 
         `
-            
-                <h2>${produto.nome}</h2>
-                <p>Quantidade necessária: ${produto.quantidade}</p>
-                <p>Quantidade comprada: 0</p>
-                        <p>Status: Pendente</p>
-                <button onclick="editarProdutos(${index})">Editar</button>
-                <button onclick="excluirProdutos(${index})">Apagar</button>
-            
+            <h2>${produto.nome}</h2>
+
+            <p>Quantidade necessária: ${produto.quantidade}</p>
+
+            <p>
+                Quantidade faltante:
+                <span class="quantidade-faltante">${quantidadeFaltante}</span>
+            </p>
+
+            <input type="number"min="0"class="input-compra"placeholder="Qtd comprada">
+            <button class="btn-comprar">Comprar</button>
         `
         listaDeProdutos.appendChild(item)
     });
@@ -34,22 +41,21 @@ const cadastrar = () =>{
         return
     }
 
-    if(indexEmEdicao !== null){
-        
-        produtos[indexEmEdicao] = {
-            
-            nome: nomeProduto.value,
-            quantidade: Number(quantidadeProduto.value),
-            
-        }
+    if(produtoEmEdicao !== null){
+        const produto = produtos.find(p => p.id === produtoEmEdicao)
+        if (!produto) return;
 
-        indexEmEdicao = null
+        produto.nome = nomeProduto.value;
+        produto.quantidade = Number(quantidadeProduto.value)
+
+        produtoEmEdicao = null
+        btnCadastrar.textContent = "Cadastrar";
+
     } else {
         produtos.push({
-            id: 0,
+            id: Date.now(),
             nome: nomeProduto.value,
             quantidade: Number(quantidadeProduto.value),
-            quantidadeComprada: 0
         })
     }
 
@@ -59,23 +65,28 @@ const cadastrar = () =>{
     btnCadastrar.textContent = "Cadastrar"
 }
 
-const excluirProdutos = (index) =>{
+const excluirProdutos = (id) =>{
     const produtos = JSON.parse(localStorage.getItem("produtos")) || []
+    
+    const produtosAtualizados = produtos.filter(produto => produto.id !== id)
 
-    produtos.splice(index, 1)
-    localStorage.setItem("produtos", JSON.stringify(produtos))
+    localStorage.setItem("produtos", JSON.stringify(produtosAtualizados))
     mostrarProdutos()
 }
 
-let indexEmEdicao = null
+let produtoEmEdicao = null
 
-const editarProdutos = (index) => {
+const editarProdutos = (id) => {
     const produtos = JSON.parse(localStorage.getItem("produtos")) || []
 
-    nomeProduto.value = produtos[index].nome
-    quantidadeProduto.value = produtos[index].quantidade
-    indexEmEdicao = index
-    btnCadastrar.textContent = "Salvar"
+    const produto = produtos.find(p => p.id === id)
+    if (!produto) return;
+
+    nomeProduto.value = produto.nome
+    quantidadeProduto.value = produto.quantidade
+
+    produtoEmEdicao = id
+    btnCadastrar.textContent = "Salvar";
 }
 
 formularioProduto.addEventListener("submit", (e) =>{
