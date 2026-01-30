@@ -10,26 +10,20 @@ const mostrarProdutos = () =>{
     listaDeProdutos.innerHTML = "";
 
     const produtos = JSON.parse(localStorage.getItem("produtos")) || []
-    const compras = JSON.parse(localStorage.getItem("compras")) || []
-
 
     produtos.forEach((produto) => {
         const item = document.createElement("div")
 
         item.innerHTML = 
-        item.innerHTML = 
         `
-            <h2>${produto.nome}</h2>
-
-            <p>Quantidade necessária: ${produto.quantidade}</p>
-
-            <p>
-                Quantidade faltante:
-                <span class="quantidade-faltante">${quantidadeFaltante}</span>
-            </p>
-
-            <input type="number"min="0"class="input-compra"placeholder="Qtd comprada">
-            <button class="btn-comprar">Comprar</button>
+        
+                <h2>${produto.nome}</h2>
+                <p>Quantidade necessária: ${produto.quantidadeNecessaria}</p>
+                <p>Quantidade comprada: ${produto.quantidadeComprada}</p>
+                <p>Status: Pendente</p>
+                <button onclick="editarProdutos(${produto.id})">Editar</button>
+                <button onclick="excluirProdutos(${produto.id})">Apagar</button>
+            
         `
         listaDeProdutos.appendChild(item)
     });
@@ -46,7 +40,7 @@ const cadastrar = () =>{
         if (!produto) return;
 
         produto.nome = nomeProduto.value;
-        produto.quantidade = Number(quantidadeProduto.value)
+        produto.quantidadeNecessaria = Number(quantidadeProduto.value)
 
         produtoEmEdicao = null
         btnCadastrar.textContent = "Cadastrar";
@@ -55,7 +49,8 @@ const cadastrar = () =>{
         produtos.push({
             id: Date.now(),
             nome: nomeProduto.value,
-            quantidade: Number(quantidadeProduto.value),
+            quantidadeNecessaria: Number(quantidadeProduto.value),
+            quantidadeComprada: 0
         })
     }
 

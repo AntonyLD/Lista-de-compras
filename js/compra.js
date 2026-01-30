@@ -18,11 +18,11 @@ const mostrarProdutosCompra = () => {
             <div>
                 <div>
                     <h3>${produto.nome}</h3>
-                    <p>falta comprar: <span class="quantidade-faltante">${produto.quantidade}</span></p>
+                    <p>falta comprar: <span class="quantidade-faltante">${produto.quantidadeNecessaria}</span></p>
                 </div>
 
                 <div>
-                    <label>Quantidade comprada</label>
+                    <label>Quantidade a comprar</label>
                     <input class="quantidade-comprada" type="number" min="0">
 
                     <label>Valor unitário</label>
@@ -51,7 +51,7 @@ const mostrarProdutosCompra = () => {
 
             spanTotal.textContent = totalItem.toFixed(2);
 
-            itensCompra[index].quantidade = qtd;
+            itensCompra[index].quantidadeComprada = qtd;
             itensCompra[index].valorUnitario = valor;
             itensCompra[index].totalItem = totalItem;
 
@@ -61,7 +61,7 @@ const mostrarProdutosCompra = () => {
 
         const atualizarItensFaltantes = () =>{
             const spanQuantFaltante = item.querySelector(".quantidade-faltante")
-            let produtoAtual = produtos[index].quantidade
+            let produtoAtual = produtos[index].quantidadeNecessaria
             let quantidadeAtual = calcularQuantidadeItem(produtoAtual, inputQtd.value)
             spanQuantFaltante.textContent = quantidadeAtual
                 
@@ -78,9 +78,9 @@ const mostrarProdutosCompra = () => {
     atualizarTotalCompra();
 };
 
-const calcularTotalItem = (quantidade, valorUnitario) => {
+const calcularTotalItem = (quantidadeNecessaria, valorUnitario) => {
 
-    return quantidade * valorUnitario;
+    return quantidadeNecessaria * valorUnitario;
 };
 
 const calcularQuantidadeItem = (qtdCadastrada, qtdComprada) =>{
@@ -110,6 +110,7 @@ formCompra.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const compras = JSON.parse(localStorage.getItem("compras")) || [];
+    const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 
     const itensFiltrados = itensCompra.filter(item => item.totalItem > 0);
 
@@ -124,6 +125,20 @@ formCompra.addEventListener("submit", (e) => {
 
     compras.push(compra);
     localStorage.setItem("compras", JSON.stringify(compras));
+
+    itensFiltrados.forEach(item =>{
+        const produto = produtos.find(p => p.id === item.produtoId);
+        if (!produto) return;
+
+        if (!produto.quantidadeComprada){
+            produto.quantidadeComprada = 0
+        }
+
+        produto.quantidadeComprada += item.quantidadeComprada
+    })
+
+    localStorage.setItem("compras", JSON.stringify(compras))
+    localStorage.setItem("produtos", JSON.stringify(produtos))
 
     alert("Compra salva com sucesso!");
     formCompra.reset()
