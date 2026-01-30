@@ -16,7 +16,6 @@ const mostrarProdutos = () =>{
 
         item.innerHTML = 
         `
-        
                 <h2>${produto.nome}</h2>
                 <p>Quantidade necessária: ${produto.quantidadeNecessaria}</p>
                 <p>Quantidade comprada: ${produto.quantidadeComprada}</p>

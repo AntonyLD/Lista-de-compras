@@ -31,8 +31,7 @@ const mostrarProdutosCompra = () => {
                     <p>Valor total R$: <span class="valor-total-item">0.00</span></p>
                 </div>
             </div>
-        `;
-
+        `
         const inputQtd = item.querySelector(".quantidade-comprada");
         const inputValor = item.querySelector(".valor-unitario");
         const spanTotal = item.querySelector(".valor-total-item");
@@ -61,10 +60,12 @@ const mostrarProdutosCompra = () => {
 
         const atualizarItensFaltantes = () =>{
             const spanQuantFaltante = item.querySelector(".quantidade-faltante")
-            let produtoAtual = produtos[index].quantidadeNecessaria
-            let quantidadeAtual = calcularQuantidadeItem(produtoAtual, inputQtd.value)
-            spanQuantFaltante.textContent = quantidadeAtual
-                
+            const produtoAtual = produtos.find(p => p.id === produto.id)
+            const faltanteBase = produtoAtual.quantidadeNecessaria - produtoAtual.quantidadeComprada
+            const qtdDigitada = Number(inputQtd.value) || 0
+            const simulacao = faltanteBase - qtdDigitada
+            spanQuantFaltante.textContent = simulacao <= 0 ? 0 : simulacao
+
         }
         atualizarItensFaltantes()
 
