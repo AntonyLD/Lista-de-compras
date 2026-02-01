@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de compras</title>
     <script src="../js/script.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <main>
+    <main> 
         <section id="box-nav">
-            <div>
+            <div id="titulo-lista">
                 <h2>Lista de compras</h2>
             </div>
             <div id="div-button-nav">
-                <button ><a href="index.html">Cadastro</a></button>
+                <button id="btn-nav-cadastrar"><a href="index.html">Cadastro</a></button>
                 <button id="btn-comprar"><a href="compra.html">Compra</a></button>
                 <button>Histórico</button>
             </div>
         </section>
-
+        
         <form id="formulario-produto">
-            <h2>Cadastar novo produto</h2>
-            <div class="prod-cad">
+            <div id="div-titulo">
+                <h2>Cadastar novo produto</h2>
+            </div>
+            <div id="prod-cad">
                 <div class="div-prod-cad">
                     <label for="nome-produto">Nome do produto</label>
                     <input id="nome-produto" type="text">
