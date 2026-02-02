@@ -16,12 +16,20 @@ const mostrarProdutos = () =>{
 
         item.innerHTML = 
         `
-                <h2>${produto.nome}</h2>
-                <p>Quantidade necessária: ${produto.quantidadeNecessaria}</p>
-                <p>Quantidade comprada: ${produto.quantidadeComprada}</p>
-                <p>Status: Pendente</p>
-                <button onclick="editarProdutos(${produto.id})">Editar</button>
-                <button onclick="excluirProdutos(${produto.id})">Apagar</button>
+            <div class="main-info-produto">
+                <div class="container-produtos">
+                    <div class="div-info-produto">
+                        <p class="nome-produto">${produto.nome}</p>
+                        <p class="qtd-nes-produto">Quantidade necessária: ${produto.quantidadeNecessaria}</p>
+                        <p class="qtd-comprada-produto">Quantidade comprada: ${produto.quantidadeComprada}</p>
+                        <p class="status-produto">Pendente</p>
+                    </div>
+                    <div class="div-btn-produto">
+                        <button onclick="editarProdutos(${produto.id})">Editar</button>
+                        <button onclick="excluirProdutos(${produto.id})">Apagar</button>
+                    </div>
+                </div>
+            </div>
             
         `
         listaDeProdutos.appendChild(item)
