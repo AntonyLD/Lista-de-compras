@@ -13,15 +13,15 @@ const mostrarProdutosCompra = () => {
 
     produtos.forEach((produto, index) => {
         const item = document.createElement("div");
-
+        item.id = "item-compra";
         item.innerHTML = `
-            <div>
-                <div>
+            <div class="container-item-compra">
+                <div class="div-info-produto">
                     <h3>${produto.nome}</h3>
                     <p>falta comprar: <span class="quantidade-faltante">${produto.quantidadeNecessaria}</span></p>
                 </div>
 
-                <div>
+                <div class="container-input-compra">
                     <label>Quantidade a comprar</label>
                     <input class="quantidade-comprada" type="number" min="0">
 

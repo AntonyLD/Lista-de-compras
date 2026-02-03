@@ -3,33 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BuyYou List</title>
     <script src="../js/compra.js" defer></script>
+    <link rel="stylesheet" href="../css/compra.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
         <section id="box-nav">
-            <div>
-                <h2>Lista de compras</h2>
+            <div id="titulo-lista">
+                <h2>BuyYou List</h2>
             </div>
             <div id="div-button-nav">
-                <button ><a href="index.html">Cadastro</a></button>
+                <button id="btn-nav-cadastrar"><a href="index.html">Cadastro</a></button>
                 <button id="btn-comprar"><a href="compra.html">Compra</a></button>
-                <button id="historico">Histórico</button>
+                <button>Histórico</button>
             </div>
         </section>
 
         <form id="form-compra">
-            <div>
-                <h3>Registrar compra</h3>
-                <h3>Total R$: <span id="valor-total-compra">0</span></h3>
+            <div id="div-total-compra">
+                <div id="container-tot-compra">
+                    <h3>Registrar compra</h3>
+                    <h3>Total R$: <span id="valor-total-compra">0</span></h3>
+                </div>
             </div>
 
             <div id="lista-comprar">
 
             </div>
 
-            <button type="submit">Finalizar Compra</button>
+            <button id="button-sbumit" type="submit">Finalizar Compra</button>
         </form>
         
     </main>

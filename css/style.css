@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
@@ -10,12 +10,11 @@ body{
     background-color: rgb(228, 228, 228);
 }
 
-
 @media (max-width: 1024px) {
     main{
         margin:  0 auto;
         width: 82%;
-        height: 100dvh;
+        
         gap: 16px;
         display: flex;
         flex-direction: column;
@@ -24,10 +23,9 @@ body{
         display: flex;
         flex-direction: column;
         gap: 10px;
-        min-width: 412px;
+        min-width: 280px;
         max-width: 800px;
         height: 110px;
-
     }
 
     #titulo-lista{
@@ -39,6 +37,7 @@ body{
 
     #div-button-nav{
         background-color: rgb(51, 51, 51);
+        width: 82vw;
         height: 70px;
         display: flex;
         justify-content: space-around;
@@ -49,21 +48,16 @@ body{
 
     #div-button-nav button{
         height: 70%;
-        width: 31%;
+        width: 28%;
         font-size: 18px;
-        
         border-radius: 6px;
-        
+        background-color: rgba(206, 206, 206, 0.548);
         border: none;
     }
 
-    #div-button-nav button a:visited{
-        
-    }
 
     #btn-nav-cadastrar{
-        background-color: rgb(40, 151, 255);
-        color: white;
+        background-image: linear-gradient(to right,rgb(40, 151, 255) 10%,rgb(13, 110, 201) 40% 60% , rgb(40, 151, 255) 90%)
     }
     #btn-nav-cadastrar a:visited{
         color: white;
@@ -74,19 +68,20 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 180px;
-        width: 100%;
+        height: 260px;
+        min-height: 180px;
+        width: 82vw;
         background-color: rgb(248, 248, 248);
         border-radius: 10px;
         box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
     }
 
     #div-titulo{
-        width: 92%;
+        width: 88%;
         height: 50px;
         display: flex;
         align-items: center;
-        
+        justify-content: flex-start;
     }
 
     #div-titulo h2{
@@ -94,8 +89,9 @@ body{
     }
 
     #prod-cad{
-        width: 92%;
+        width: 88%;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
     }
 
@@ -103,16 +99,23 @@ body{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        width: 40%;
-        max-width: 192px;
+        min-width: 124px;
+        width: 100%;
+        
     }
 
     .div-prod-cad input{
-        width: 100%;
+        width: 97%;
         min-height: 40px;
         border-radius: 6px;
         border: 1px solid rgba(0, 0, 0, 0.096);
         background-color: rgb(228, 228, 228);
+        padding-left: 10px;
+        font-size: 16px;
+    }
+
+    #nome-produto{
+        margin-bottom: 10px;
     }
 
     #div-btn-cad{
@@ -120,17 +123,19 @@ body{
         justify-content: center;
         align-items: center;
         min-height: 60px;
-        width: 95%;
+        width: 91%;
     }
 
     #div-btn-cad button{
         width: 97%;
         height: 3rem;
-        max-height: 60px;
+        max-height: 40px;
         text-decoration: none;
         color: white;
-        border: 2px solid rgba(0, 0, 0, 0.144);
-        background-color: rgb(40, 151, 255);
+        border: none;
+        background-image: linear-gradient(to right,rgb(40, 151, 255) 10%,rgb(11, 103, 189) 50%, rgb(40, 151, 255) 90%
+        );
+        box-shadow: 3px 4px 0px rgb(24, 106, 184);
         font-size: 16px;
         font-weight: bolder;
         border-radius: 6px;
@@ -141,42 +146,45 @@ body{
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: flex-start;
-        gap: 10px;
+        gap: 60px;
     }
     
     #lista-de-produtos div{
         height: 110px;
-        
-        
     }
 
     .main-info-produto{
         width: 82vw;
+        min-height: 150px;
         display: flex;
         justify-content: center;
+        align-items: center;;
         background-color: rgb(248, 248, 248);
         box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
         border-radius: 10px;
     }
 
     .container-produtos{
-        width: 92% !important;
+        width: 88% !important;
         display: flex;
         justify-content: space-between;
         align-items: center !important;
     }
 
     .div-info-produto{
-        
+        width: 50% !important;
+        min-width: 200px;
         display: flex;
-        
         flex-direction: column;
         align-items: flex-start ;
         justify-content: center;
-        width: 50% !important;
+        
         gap: 2px;
+    }
+
+    .div-info-produto p:last-child{
+        margin-top: 18px;
     }
 
     .nome-produto{
@@ -197,27 +205,34 @@ body{
     .div-btn-produto{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
 
         gap: 20px;
         width: 80px !important;
-        height: 80px !important;
+        height: 120px !important;
     }
 
     .div-btn-produto button{
-        width: 60px ;
-        height: 36px ;
+        width: 70px ;
+        height: 40px ;
         border: 1px solid rgba(0, 0, 0, 0.185);
         border-radius: 6px;
         
     }
 
     .div-btn-produto button:first-child{
-        background-color: rgb(40, 151, 255);
+        background-image: linear-gradient(to right,rgb(40, 151, 255) 10%,rgb(13, 110, 201) 40% 60% , rgb(40, 151, 255) 90%
+        );
+        box-shadow: 2px 2px 0px rgb(24, 106, 184);
         color: white;
     }
 
     .div-btn-produto button:last-child{
-        background-color: rgba(255, 59, 59, 0.89);
+        border: 1px solid rgba(0, 0, 0, 0.205);
+        background-image: linear-gradient(to right,rgba(255, 59, 59, 0.89) 10%,rgba(211, 27, 27, 0.89) 40% 60% , rgba(255, 59, 59, 0.89) 90%
+        );
+        box-shadow: 2px 2px 0px rgba(197, 42, 42, 0.89);
         color: white;
     }
 

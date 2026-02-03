@@ -20,8 +20,8 @@ const mostrarProdutos = () =>{
                 <div class="container-produtos">
                     <div class="div-info-produto">
                         <p class="nome-produto">${produto.nome}</p>
-                        <p class="qtd-nes-produto">Quantidade necessária: ${produto.quantidadeNecessaria}</p>
-                        <p class="qtd-comprada-produto">Quantidade comprada: ${produto.quantidadeComprada}</p>
+                        <p class="qtd-nes-produto">Total necessário: ${produto.quantidadeNecessaria}</p>
+                        <p class="qtd-comprada-produto">Total comprado: ${produto.quantidadeComprada}</p>
                         <p class="status-produto">Pendente</p>
                     </div>
                     <div class="div-btn-produto">
