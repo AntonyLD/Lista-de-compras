@@ -4,10 +4,17 @@
     font-family: "Roboto", sans-serif;
     text-decoration: none;
     color: rgb(0, 0, 0);
+} 
+
+:root{
+    --corBg: rgba(64, 67, 201);
+    --corSegundariaBg: rgba(253, 255, 255);
+    --corTerciaruaBg: rgba(240, 244, 247);
 }
 
+
 body{
-    background-color: rgb(228, 228, 228);
+    background-color:var(--corBg);
 }
 
 @media (max-width: 1024px) {
@@ -33,6 +40,7 @@ body{
         justify-content: center;
         align-items: center;
         height: 60px;
+        
     }
 
     #div-button-nav{
@@ -71,7 +79,7 @@ body{
         height: 260px;
         min-height: 180px;
         width: 82vw;
-        background-color: rgb(248, 248, 248);
+        background-color: var(--corSegundariaBg);
         border-radius: 10px;
         box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
     }
@@ -109,7 +117,7 @@ body{
         min-height: 40px;
         border-radius: 6px;
         border: 1px solid rgba(0, 0, 0, 0.096);
-        background-color: rgb(228, 228, 228);
+        background-color: var(--corSegundariaBg);
         padding-left: 10px;
         font-size: 16px;
     }
@@ -160,7 +168,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;;
-        background-color: rgb(248, 248, 248);
+        background-color: var(--corSegundariaBg);
         box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
         border-radius: 10px;
     }
@@ -240,7 +248,7 @@ body{
 
 @media (min-width: 1025px) {
     body{
-        background-color: rgb(228, 228, 228);
+        background-color: rgb(64, 67, 201);
     }
 
     main{
@@ -254,7 +262,7 @@ body{
         align-items: center;
     }
 
-        #box-nav{
+    #box-nav{
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -262,22 +270,27 @@ body{
         height: 110px;
     }
 
-    #titulo-lista{
+    #formulario-produto{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 60px;
+        height: 350px;
+        min-height: 300px;
+        width: 100%;
+        background-color: var(--corSegundariaBg);
+        border-radius: 26px 26px 0px 0px;
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
     }
 
     #div-button-nav{
-        background-color: rgb(51, 51, 51);
-        width: 100%;
+        background-color: var(--corTerciaruaBg);
+        width: 88%;
         height: 70px;
+        border-radius: 10px;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        border-radius: 6px;
-        
     }
 
     #div-button-nav button{
@@ -289,6 +302,56 @@ body{
         border: none;
     }
 
+    #div-titulo{
+        width: 88%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    #prod-cad{
+        height:80px;
+        width: 88%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--corTerciaruaBg);
+    }
+
+    .div-prod-cad{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 90%;
+        min-width: 124px;
+        width: 46%;
+    }
+
+    .div-prod-cad label{
+        margin-left: 20px;
+    }
+
+    .div-prod-cad input{
+        margin-left: 20px;
+        width: 84%;
+        min-height: 40px;
+        border-radius: 6px;
+        border: 1px solid rgba(0, 0, 0, 0.096);
+        background-color: var(--corSegundariaBg);
+        padding-left: 10px;
+        font-size: 16px;
+    }
+
+    #titulo-lista{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
+        position: relative;
+    }
+
     #btn-nav-cadastrar{
         background-image: linear-gradient(to right,rgb(40, 151, 255) 10%,rgb(13, 110, 201) 40% 60% , rgb(40, 151, 255) 90%)
     }
@@ -296,57 +359,11 @@ body{
         color: white;
     }
 
-    #formulario-produto{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 300px;
-        min-height: 300px;
-        width: 100%;
-        background-color: rgb(248, 248, 248);
-        border-radius: 10px;
-        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
-    }
-
-    #div-titulo{
-        width: 88%;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        margin-bottom: 20px;
-    }
-
     #div-titulo h2{
         font-size: 20px;
     }
 
-    #prod-cad{
-        width: 88%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
 
-    .div-prod-cad{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        min-width: 124px;
-        width: 100%;
-        
-    }
-
-    .div-prod-cad input{
-        width: 97%;
-        min-height: 40px;
-        border-radius: 6px;
-        border: 1px solid rgba(0, 0, 0, 0.096);
-        background-color: rgb(228, 228, 228);
-        padding-left: 10px;
-        font-size: 16px;
-    }
 
     #nome-produto{
         margin-bottom: 10px;
@@ -398,7 +415,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;;
-        background-color: rgb(248, 248, 248);
+        background-color: var(--corSegundariaBg);
         box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
         border-radius: 10px;
     }
