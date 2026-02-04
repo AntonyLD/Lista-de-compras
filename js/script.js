@@ -13,7 +13,7 @@ const mostrarProdutos = () =>{
 
     produtos.forEach((produto) => {
         const item = document.createElement("div")
-
+        item.id = "item-lista"
         item.innerHTML = 
         `
             <div class="main-info-produto">
