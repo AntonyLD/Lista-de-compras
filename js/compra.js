@@ -22,11 +22,17 @@ const mostrarProdutosCompra = () => {
                 </div>
 
                 <div class="container-input-compra">
-                    <label>Quantidade a comprar</label>
-                    <input class="quantidade-comprada" type="number" min="0">
+                    <div class="contaiter-style-input-compra">
+                        <div class="div-style-input-compra">
+                            <label>Quantidade a comprar</label>
+                            <input class="quantidade-comprada" type="number" min="0">
+                        </div>
 
-                    <label>Valor unitário</label>
-                    <input class="valor-unitario" type="number" min="0" step="0.01">
+                        <div class="div-style-input-compra">
+                            <label>Valor unitário</label>
+                            <input class="valor-unitario" type="number" min="0" step="0.01">
+                        </div>
+                    </div>
 
                     <p>Valor total R$: <span class="valor-total-item">0.00</span></p>
                 </div>

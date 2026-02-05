@@ -3,12 +3,22 @@
     padding: 0;
     font-family: "Roboto", sans-serif;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    
+}
+
+:root{
+    --corBgPadrao: rgba(64, 67, 201);
+    --corBgPadrao2:rgb(79, 81, 255);
+    --corBgPadraoClaro: rgb(1, 255, 255);
+    --corbgEscuroClaro: rgb(53, 56, 223);
+    --corbgEscuro: rgb(44, 46, 158);
+    --corSegundariaBg: rgba(253, 255, 255);
+    --corTerciaruaBg: rgba(240, 244, 247);
 }
 
 body{
-    background-color: rgb(228, 228, 228);
-}
+        background-color: var(--corBgPadrao);
+    }
 
 @media (max-width: 1024px) {
     main{
@@ -152,72 +162,49 @@ body{
     main{
         margin:  0 auto;
         width: 800px;
-        
         height: 100dvh;
-        gap: 16px;
         display: flex;
         flex-direction: column;
     }
     #box-nav{
         display: flex;
         flex-direction: column;
-        gap: 10px;
         min-width: 280px;
         max-width: 800px;
-        height: 110px;
-    }
-
-    #form-compra{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+        height: 200px;
     }
 
     #titulo-lista{
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 130px;
+        position: relative;
+        
+    }
+
+    #titulo-lista h2{
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        color: var(--corSegundariaBg);
+        font-size: 50px;
+    }
+
+    #form-compra{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: var(--corSegundariaBg);
+        border-radius: 26px;
+    }
+
+        #div-total-compra{
+        display: flex;
         height: 60px;
-    }
-
-    #div-button-nav{
-        background-color: rgb(51, 51, 51);
-        width: 100%;
-        height: 70px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border-radius: 6px;
-    }
-
-    #div-button-nav button{
-        height: 70%;
-        width: 28%;
-        font-size: 18px;
-        border-radius: 6px;
-        border: none;
-        background-color: rgba(206, 206, 206, 0.548);
-    }
-
-    #btn-comprar{
-        background-image: linear-gradient(to right,rgb(1, 221, 100)  10%,rgb(0, 151, 68)  40% 60% , rgb(1, 221, 100)  90%)
-    }
-
-    #btn-comprar a:visited{
-        color: white !important;
-    }
-
-    #div-total-compra{
-        display: flex;
         justify-content: space-between;
         font-size: 14px;
-    }
-
-    #div-total-compra{ 
-        height: 40px;
-        border-radius: 6px;
-        background-color: rgb(248, 248, 248);
-        box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.24);
+        box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.11);
     }
 
     #container-tot-compra{
@@ -228,6 +215,38 @@ body{
         justify-content: space-between;
     }
 
+        #div-button-nav{
+        /* background-color: var(--corTerciaruaBg); */
+        width: 100%;
+        height: 70px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #div-button-nav button{
+        height: 100%;
+        width: 28%;
+        font-size: 18px;
+        border-radius: 6px 6px 0px 0px;
+        background-color: var(--corbgEscuro);
+        border: none;
+        color: var(--corSegundariaBg);
+    }
+
+    #div-button-nav button a{
+        color: var(--corSegundariaBg);
+    }
+
+    #btn-comprar{
+        background-color: var(--corSegundariaBg) !important;
+    }
+
+    #btn-comprar a:visited{
+        color: var(--corBgPadrao) !important;
+    }
+
     #lista-comprar{
         display: flex;
         flex-direction: column;
@@ -235,7 +254,9 @@ body{
     }
 
     #item-compra{
-        height: 270px;
+        width: 85%;
+        padding: 20px 0px 20px 0px;
+        margin: auto;
         background-color: rgb(248, 248, 248);
         box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.24);
         border-radius: 10px;
@@ -246,10 +267,26 @@ body{
     }
 
     .container-item-compra{
-        width: 88%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+
+    .contaiter-style-input-compra{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .div-style-input-compra{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .div-style-input-compra input{
+        width: 94%;
     }
 
     .div-info-produto p, span{
@@ -274,7 +311,9 @@ body{
     }
 
     #button-sbumit{
-        height: 36px;
+        margin: 0 auto;
+        width: 85%;
+        height: 46px;
         border-radius: 6px;
         border: none;
         margin-bottom: 20px;

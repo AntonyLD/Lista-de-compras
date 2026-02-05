@@ -7,14 +7,18 @@
 } 
 
 :root{
-    --corBg: rgba(64, 67, 201);
+    --corBgPadrao: rgba(64, 67, 201);
+    --corBgPadrao2:rgb(79, 81, 255);
+    --corBgPadraoClaro: rgb(1, 255, 255);
+    --corbgEscuroClaro: rgb(53, 56, 223);
+    --corbgEscuro: rgb(44, 46, 158);
     --corSegundariaBg: rgba(253, 255, 255);
     --corTerciaruaBg: rgba(240, 244, 247);
 }
 
 
 body{
-    background-color:var(--corBg);
+    background-color:var(--corBgPadrao);
 }
 
 @media (max-width: 1024px) {
@@ -256,7 +260,6 @@ body{
         width: 82%;
         max-width: 800px;
         height: 100dvh;
-        gap: 16px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -264,10 +267,26 @@ body{
 
     #box-nav{
         display: flex;
-        flex-direction: column;
-        gap: 10px;
+        justify-content: center;
         width: 100%;
-        height: 110px;
+        
+    }
+
+    #titulo-lista{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 130px;
+        position: relative;
+        
+    }
+
+    #titulo-lista h2{
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        color: var(--corSegundariaBg);
+        font-size: 50px;
     }
 
     #formulario-produto{
@@ -275,12 +294,13 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 350px;
-        min-height: 300px;
+        height: 360px;
+        min-height: 360px;
         width: 100%;
         background-color: var(--corSegundariaBg);
         border-radius: 26px 26px 0px 0px;
         box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.171);
     }
 
     #div-button-nav{
@@ -344,16 +364,13 @@ body{
         font-size: 16px;
     }
 
-    #titulo-lista{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 120px;
-        position: relative;
+    .div-prod-cad input:focus{
+        outline: 2px solid var(--corBgPadrao);
     }
 
     #btn-nav-cadastrar{
-        background-image: linear-gradient(to right,rgb(40, 151, 255) 10%,rgb(13, 110, 201) 40% 60% , rgb(40, 151, 255) 90%)
+        box-shadow: inset 0px 0px 20px var(--corBgPadraoClaro);
+        background-color: var(--corBgPadrao) !important;
     }
     #btn-nav-cadastrar a:visited{
         color: white;
@@ -363,8 +380,6 @@ body{
         font-size: 20px;
     }
 
-
-
     #nome-produto{
         margin-bottom: 10px;
     }
@@ -373,40 +388,47 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 60px;
+        margin-top: 20px;
+        min-height: 50px;
         width: 91%;
     }
 
     #div-btn-cad button{
         width: 97%;
-        height: 3rem;
-        max-height: 40px;
+        height: 50px;
+        max-height: 50px;
         text-decoration: none;
         color: white;
         border: none;
-        background-image: linear-gradient(to right,rgb(40, 151, 255) 10%,rgb(11, 103, 189) 50%, rgb(40, 151, 255) 90%
-        );
-        box-shadow: 3px 4px 0px rgb(24, 106, 184);
+        background-color: var(--corBgPadrao) !important;
         font-size: 16px;
         font-weight: bolder;
         border-radius: 6px;
+        transition: 0.5s;
+    }
+
+    #div-btn-cad button:hover{
+        box-shadow: inset 0px 0px 20px var(--corBgPadraoClaro);
+        cursor: pointer;
     }
 
     #lista-de-produtos{
-        min-height: 200px;
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 70px;
-    }
-    
-    #lista-de-produtos div{
-        height: 110px;
+        align-items: center;
+        background-color: var(--corSegundariaBg);
+        
     }
 
     #item-lista{
-        width: 100%;
+        margin-top: 40px;
+        width: 88%;
+        min-height: 160px;
+    }
+
+    #item-lista:last-child{
+        margin-bottom: 40px;
     }
 
     .main-info-produto{
@@ -415,8 +437,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;;
-        background-color: var(--corSegundariaBg);
-        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
+        background-color: var(--corTerciaruaBg);
         border-radius: 10px;
     }
 
@@ -434,12 +455,19 @@ body{
         flex-direction: column;
         align-items: flex-start ;
         justify-content: center;
-        
         gap: 2px;
+
+    }
+
+    .div-info-produto p:first-child{
+        
+        
+        border-radius: 6px;
+        font-size: 25px;
     }
 
     .div-info-produto p:last-child{
-        margin-top: 18px;
+        margin-top: 12px;
     }
 
     .nome-produto{
@@ -477,18 +505,28 @@ body{
     }
 
     .div-btn-produto button:first-child{
-        background-image: linear-gradient(to right,rgb(40, 151, 255) 10%,rgb(13, 110, 201) 40% 60% , rgb(40, 151, 255) 90%
-        );
-        box-shadow: 2px 2px 0px rgb(24, 106, 184);
+        background-color: var(--corBgPadrao) ;
         color: white;
+        transition: 0.5s;
+        border: none;
+    }
+
+    .div-btn-produto button:first-child:hover{
+        box-shadow: inset 0px 0px 20px var(--corBgPadraoClaro);
+        cursor: pointer;
     }
 
     .div-btn-produto button:last-child{
-        border: 1px solid rgba(0, 0, 0, 0.205);
-        background-image: linear-gradient(to right,rgba(255, 59, 59, 0.89) 10%,rgba(211, 27, 27, 0.89) 40% 60% , rgba(255, 59, 59, 0.89) 90%
-        );
-        box-shadow: 2px 2px 0px rgba(197, 42, 42, 0.89);
+        transition: 0.5s;
+        background-color: rgba(143, 18, 18, 0.89);
         color: white;
+        border: none;
+    }
+
+    .div-btn-produto button:last-child:hover{
+        box-shadow: inset 0px 0px 20px rgba(255, 247, 247, 0.89);
+        background-color: rgb(255, 0, 0);
+        cursor: pointer;
     }
 
     
