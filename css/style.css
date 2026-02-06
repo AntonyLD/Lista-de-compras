@@ -9,11 +9,12 @@
 :root{
     --corBgPadrao: rgba(64, 67, 201);
     --corBgPadrao2:rgb(79, 81, 255);
-    --corBgPadraoClaro: rgb(1, 255, 255);
+    --corBgPadraoClaro: rgb(77, 80, 253);
     --corbgEscuroClaro: rgb(53, 56, 223);
     --corbgEscuro: rgb(44, 46, 158);
     --corSegundariaBg: rgba(253, 255, 255);
-    --corTerciaruaBg: rgba(240, 244, 247);
+    --corTerciaruaBg: rgb(230, 245, 255);
+    --corBtnApagar:rgba(211, 27, 27, 0.89) ;
 }
 
 
@@ -24,8 +25,8 @@ body{
 @media (max-width: 1024px) {
     main{
         margin:  0 auto;
-        width: 82%;
-        gap: 16px;
+        width: 100%;
+        max-width: 700px;
         display: flex;
         flex-direction: column;
     }
@@ -36,60 +37,70 @@ body{
         gap: 10px;
         min-width: 280px;
         max-width: 800px;
-        height: 110px;
+        height: 200px;
     }
 
     #titulo-lista{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 60px;
-        
+        height: 130px;
+
+    }
+
+    #titulo-lista h2{
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        color: var(--corSegundariaBg);
+        font-size: 50px;
     }
 
     #div-button-nav{
-        background-color: rgb(51, 51, 51);
-        width: 82vw;
-        height: 70px;
+        width: 100%;
+        height: 60px;
+        border-radius: 10px;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        border-radius: 6px;
-        
     }
 
     #div-button-nav button{
-        height: 70%;
+        height: 100%;
         width: 28%;
-        font-size: 18px;
-        border-radius: 6px;
-        background-color: rgba(206, 206, 206, 0.548);
+        font-size: 16px;
+        border-radius: 6px 6px 0px 0px;
+        background-color: var(--corbgEscuro);
         border: none;
+        color: var(--corSegundariaBg);
     }
 
+    #div-button-nav button a{
+        color: var(--corSegundariaBg);
+    }
 
     #btn-nav-cadastrar{
-        background-image: linear-gradient(to right,rgb(40, 151, 255) 10%,rgb(13, 110, 201) 40% 60% , rgb(40, 151, 255) 90%)
+        background-color: var(--corSegundariaBg) !important;
     }
     #btn-nav-cadastrar a:visited{
-        color: white;
+        color: var(--corBgPadrao)
     }
-
 
     #formulario-produto{
         display: flex;
         flex-direction: column;
         align-items: center;
         height: 260px;
+        padding: 10px 0px 10px 0px;
         min-height: 180px;
-        width: 82vw;
+        width: 100%;
         background-color: var(--corSegundariaBg);
-        border-radius: 10px;
-        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
+        border-radius: 16px 16px 0px 0px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.171);
     }
 
     #div-titulo{
-        width: 88%;
+        width: 80%;
         height: 50px;
         display: flex;
         align-items: center;
@@ -101,10 +112,8 @@ body{
     }
 
     #prod-cad{
-        width: 88%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        width: 80%;
+        
     }
 
     .div-prod-cad{
@@ -113,14 +122,13 @@ body{
         align-items: flex-start;
         min-width: 124px;
         width: 100%;
-        
     }
 
     .div-prod-cad input{
         width: 97%;
         min-height: 40px;
         border-radius: 6px;
-        border: 1px solid rgba(0, 0, 0, 0.096);
+        border: 3px solid rgba(0, 0, 0, 0.096) !important;
         background-color: var(--corSegundariaBg);
         padding-left: 10px;
         font-size: 16px;
@@ -135,45 +143,54 @@ body{
         justify-content: center;
         align-items: center;
         min-height: 60px;
-        width: 91%;
+        width: 84%;
     }
 
     #div-btn-cad button{
+        margin: 20px 0px 0px 6px;
         width: 97%;
         height: 3rem;
         max-height: 40px;
         text-decoration: none;
         color: white;
         border: none;
-        background-image: linear-gradient(to right,rgb(40, 151, 255) 10%,rgb(11, 103, 189) 50%, rgb(40, 151, 255) 90%
-        );
-        box-shadow: 3px 4px 0px rgb(24, 106, 184);
+        background-color: var(--corBgPadrao);
         font-size: 16px;
         font-weight: bolder;
         border-radius: 6px;
     }
 
     #lista-de-produtos{
-        min-height: 200px;
+        min-height: 160px;
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 60px;
+        align-items: center;
+        padding: 30px 0px 0px 0px;
+        border-radius: 0px 0px 16px 16px;
+        gap: 20px;
+        background-color: var(--corSegundariaBg);
+        
     }
-    
-    #lista-de-produtos div{
-        height: 110px;
+
+    #lista-de-produtos:last-child{
+        padding-bottom: 30px;
+    }
+
+    #item-lista{
+        width: 88%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .main-info-produto{
-        width: 82vw;
+        width: 94%;
         min-height: 150px;
         display: flex;
         justify-content: center;
         align-items: center;;
-        background-color: var(--corSegundariaBg);
-        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
+        background-color: var(--corTerciaruaBg);
         border-radius: 10px;
     }
 
@@ -191,8 +208,11 @@ body{
         flex-direction: column;
         align-items: flex-start ;
         justify-content: center;
-        
         gap: 2px;
+    }
+
+    .div-info-produto p:first-child{
+        font-size: 22px;
     }
 
     .div-info-produto p:last-child{
@@ -234,17 +254,12 @@ body{
     }
 
     .div-btn-produto button:first-child{
-        background-image: linear-gradient(to right,rgb(40, 151, 255) 10%,rgb(13, 110, 201) 40% 60% , rgb(40, 151, 255) 90%
-        );
-        box-shadow: 2px 2px 0px rgb(24, 106, 184);
+        background-color: var(--corBgPadrao);
         color: white;
     }
 
     .div-btn-produto button:last-child{
-        border: 1px solid rgba(0, 0, 0, 0.205);
-        background-image: linear-gradient(to right,rgba(255, 59, 59, 0.89) 10%,rgba(211, 27, 27, 0.89) 40% 60% , rgba(255, 59, 59, 0.89) 90%
-        );
-        box-shadow: 2px 2px 0px rgba(197, 42, 42, 0.89);
+        background-color: var(--corBtnApagar);
         color: white;
     }
 
@@ -267,9 +282,9 @@ body{
 
     #box-nav{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         width: 100%;
-        
     }
 
     #titulo-lista{
@@ -278,7 +293,6 @@ body{
         align-items: center;
         height: 130px;
         position: relative;
-        
     }
 
     #titulo-lista h2{
@@ -294,18 +308,16 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 360px;
-        min-height: 360px;
+        height: 280px;
+        min-height: 280px;
         width: 100%;
         background-color: var(--corSegundariaBg);
         border-radius: 26px 26px 0px 0px;
-        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.445);
         border-bottom: 1px solid rgba(0, 0, 0, 0.171);
     }
 
     #div-button-nav{
-        background-color: var(--corTerciaruaBg);
-        width: 88%;
+        width: 100%;
         height: 70px;
         border-radius: 10px;
         display: flex;
@@ -314,16 +326,28 @@ body{
     }
 
     #div-button-nav button{
-        height: 70%;
+        height: 100%;
         width: 28%;
         font-size: 18px;
-        border-radius: 6px;
-        background-color: rgba(206, 206, 206, 0.548);
+        border-radius: 6px 6px 0px 0px;
+        background-color: var(--corbgEscuro);
         border: none;
+        color: var(--corSegundariaBg);
+    }
+
+    #div-button-nav button a{
+        color: var(--corSegundariaBg);
+    }
+
+    #btn-nav-cadastrar{
+        background-color: var(--corSegundariaBg) !important;
+    }
+    #btn-nav-cadastrar a:visited{
+        color: var(--corBgPadrao);
     }
 
     #div-titulo{
-        width: 88%;
+        width: 83%;
         height: 60px;
         display: flex;
         align-items: center;
@@ -331,19 +355,21 @@ body{
     }
 
     #prod-cad{
-        height:80px;
+        height:110px;
         width: 88%;
         border-radius: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: var(--corTerciaruaBg);
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.199);
     }
 
     .div-prod-cad{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
         height: 90%;
         min-width: 124px;
         width: 46%;
@@ -351,10 +377,11 @@ body{
 
     .div-prod-cad label{
         margin-left: 20px;
+        margin-bottom: 10px;
     }
 
     .div-prod-cad input{
-        margin-left: 20px;
+        margin: 0px 0px 10px 20px;
         width: 84%;
         min-height: 40px;
         border-radius: 6px;
@@ -368,20 +395,8 @@ body{
         outline: 2px solid var(--corBgPadrao);
     }
 
-    #btn-nav-cadastrar{
-        box-shadow: inset 0px 0px 20px var(--corBgPadraoClaro);
-        background-color: var(--corBgPadrao) !important;
-    }
-    #btn-nav-cadastrar a:visited{
-        color: white;
-    }
-
     #div-titulo h2{
         font-size: 20px;
-    }
-
-    #nome-produto{
-        margin-bottom: 10px;
     }
 
     #div-btn-cad{
@@ -389,6 +404,7 @@ body{
         justify-content: center;
         align-items: center;
         margin-top: 20px;
+        margin-bottom: 20px;
         min-height: 50px;
         width: 91%;
     }
@@ -408,7 +424,7 @@ body{
     }
 
     #div-btn-cad button:hover{
-        box-shadow: inset 0px 0px 20px var(--corBgPadraoClaro);
+        background-color: var(--corBgPadraoClaro)!important;
         cursor: pointer;
     }
 
@@ -417,14 +433,16 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-radius: 0px 0px 26px 26px;
         background-color: var(--corSegundariaBg);
-        
     }
 
     #item-lista{
         margin-top: 40px;
+        border-radius: 10px;
         width: 88%;
         min-height: 160px;
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.199);
     }
 
     #item-lista:last-child{
@@ -456,12 +474,9 @@ body{
         align-items: flex-start ;
         justify-content: center;
         gap: 2px;
-
     }
 
     .div-info-produto p:first-child{
-        
-        
         border-radius: 6px;
         font-size: 25px;
     }
@@ -499,7 +514,7 @@ body{
     .div-btn-produto button{
         width: 70px ;
         height: 40px ;
-        border: 1px solid rgba(0, 0, 0, 0.185);
+        border: 1px solid rgba(255, 0, 0, 0.185);
         border-radius: 6px;
         
     }
@@ -512,7 +527,7 @@ body{
     }
 
     .div-btn-produto button:first-child:hover{
-        box-shadow: inset 0px 0px 20px var(--corBgPadraoClaro);
+        background-color: var(--corBgPadraoClaro);
         cursor: pointer;
     }
 

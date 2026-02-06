@@ -17,8 +17,11 @@ const mostrarProdutosCompra = () => {
         item.innerHTML = `
             <div class="container-item-compra">
                 <div class="div-info-produto">
-                    <h3>${produto.nome}</h3>
-                    <p>falta comprar: <span class="quantidade-faltante">${produto.quantidadeNecessaria}</span></p>
+                    <div class="info-produto">
+                        <h3>${produto.nome}</h3>
+                        <p>falta comprar: <span class="quantidade-faltante">${produto.quantidadeNecessaria}</span></p>
+                    </div>
+                    <p>Total Item R$: <span class="valor-total-item">0.00</span></p>
                 </div>
 
                 <div class="container-input-compra">
@@ -34,7 +37,7 @@ const mostrarProdutosCompra = () => {
                         </div>
                     </div>
 
-                    <p>Valor total R$: <span class="valor-total-item">0.00</span></p>
+                    
                 </div>
             </div>
         `

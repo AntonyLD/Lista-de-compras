@@ -23,10 +23,8 @@ body{
 @media (max-width: 1024px) {
     main{
         margin:  0 auto;
-        width: 82%;
-        
-        height: 100dvh;
-        gap: 16px;
+        width: 100%;
+        max-width: 700px;
         display: flex;
         flex-direction: column;
     }
@@ -36,60 +34,70 @@ body{
         gap: 10px;
         min-width: 280px;
         max-width: 800px;
-        height: 110px;
+        height: 200px;
     }
 
-    #form-compra{
+    #div-button-nav{
+        width: 100%;
+        height: 60px;
+        border-radius: 10px;
         display: flex;
-        flex-direction: column;
-        gap: 16px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #div-button-nav button{
+        height: 100%;
+        width: 28%;
+        font-size: 18px;
+        border-radius: 6px 6px 0px 0px;
+        background-color: var(--corbgEscuro);
+        border: none;
+        color: var(--corSegundariaBg);
+    }
+
+    #div-button-nav button a{
+        color: var(--corSegundariaBg);
+    }
+
+    #btn-comprar{
+        background-color: var(--corSegundariaBg) !important;
+    }
+
+    #btn-comprar a:visited{
+        color: var(--corBgPadrao) !important;
     }
 
     #titulo-lista{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 60px;
+        height: 130px;
+        position: relative;
+        
     }
 
-    #div-button-nav{
-        background-color: rgb(51, 51, 51);
-        width: 82vw;
-        height: 70px;
+    #titulo-lista h2{
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        color: var(--corSegundariaBg);
+        font-size: 50px;
+    }
+
+    #form-compra{
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border-radius: 6px;
+        flex-direction: column;
+        gap: 16px;
+        background-color: var(--corSegundariaBg);
+        border-radius: 16px;
     }
-
-    #div-button-nav button{
-        height: 70%;
-        width: 28%;
-        font-size: 18px;
-        border-radius: 6px;
-        border: none;
-        background-color: rgba(206, 206, 206, 0.548);
-    }
-
-    #btn-comprar{
-        background-image: linear-gradient(to right,rgb(1, 221, 100)  10%,rgb(0, 151, 68)  40% 60% , rgb(1, 221, 100)  90%)
-    }
-
-    #btn-comprar a:visited{
-        color: white !important;
-    }
-
     #div-total-compra{
         display: flex;
+        height: 60px;
         justify-content: space-between;
         font-size: 14px;
-    }
-
-    #div-total-compra{ 
-        height: 40px;
-        border-radius: 6px;
-        background-color: rgb(248, 248, 248);
-        box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.24);
+        box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.11);
     }
 
     #container-tot-compra{
@@ -103,13 +111,15 @@ body{
     #lista-comprar{
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 16px;
     }
 
     #item-compra{
         height: 240px;
+        width: 90%;
         background-color: rgb(248, 248, 248);
-        box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.24);
+        box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.24);
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -129,11 +139,6 @@ body{
         font-weight: bold;
     }
 
-    .container-input-compra{
-        display: flex;
-        flex-direction: column;
-    }
-
     .container-input-compra input{
         min-height: 40px;
         height: 30px;
@@ -143,6 +148,15 @@ body{
         background-color: rgb(228, 228, 228);
         padding-left: 12px;
         font-size: 16px;
+    }
+
+    .div-info-produto{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.13);
+        
     }
 
     #button-sbumit{
@@ -194,12 +208,12 @@ body{
     #form-compra{
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 30px;
         background-color: var(--corSegundariaBg);
         border-radius: 26px;
     }
 
-        #div-total-compra{
+    #div-total-compra{
         display: flex;
         height: 60px;
         justify-content: space-between;
@@ -209,14 +223,17 @@ body{
 
     #container-tot-compra{
         margin: 0 auto;
-        width: 90%;
+        width: 72%;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-        #div-button-nav{
-        /* background-color: var(--corTerciaruaBg); */
+    #container-tot-compra h3{
+        font-size: 22px;
+    }
+
+    #div-button-nav{
         width: 100%;
         height: 70px;
         border-radius: 10px;
@@ -254,17 +271,35 @@ body{
     }
 
     #item-compra{
-        width: 85%;
+        width: 80%;
         padding: 20px 0px 20px 0px;
         margin: auto;
         background-color: rgb(248, 248, 248);
-        box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.24);
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.199);
         border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 6px;
     }
+
+    .div-info-produto{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.13);
+        padding-bottom: 10px;
+    }
+
+    .div-info-produto h3{
+        font-size: 22px;
+    }
+
+    .div-info-produto p, span{
+        color: rgb(64, 136, 230);
+        font-weight: bold;
+    }
+
 
     .container-item-compra{
         width: 90%;
@@ -273,50 +308,40 @@ body{
         gap: 10px;
     }
 
+    .container-input-compra input{
+        min-height: 40px;
+        height: 30px;
+        margin-bottom: 8px;
+        border: 2px solid rgba(0, 0, 0, 0.13);
+        border-radius: 6px;
+        padding-left: 12px;
+        font-size: 16px;
+    }
+
     .contaiter-style-input-compra{
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
+    .contaiter-style-input-compra input:focus{
+        outline: 2px solid var(--corBgPadrao);
+    }   
+
     .div-style-input-compra{
         width: 40%;
         display: flex;
         flex-direction: column;
+        color: rgba(0, 0, 0, 0.658);
     }
-
-    .div-style-input-compra input{
-        width: 94%;
-    }
-
-    .div-info-produto p, span{
-        color: rgb(64, 136, 230);
-        font-weight: bold;
-    }
-
-    .container-input-compra{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .container-input-compra input{
-        min-height: 40px;
-        height: 30px;
-        margin-bottom: 8px;
-        border: none;
-        border-radius: 6px;
-        background-color: rgb(228, 228, 228);
-        padding-left: 12px;
-        font-size: 16px;
-    }
-
+    
     #button-sbumit{
         margin: 0 auto;
-        width: 85%;
+        width: 80%;
         height: 46px;
         border-radius: 6px;
         border: none;
-        margin-bottom: 20px;
+        margin-bottom: 36px;
         background-color: rgb(1, 221, 100);
         box-shadow: 3px 4px 0px rgb(0, 182, 82);
         color: white;
