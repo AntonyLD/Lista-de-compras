@@ -13,7 +13,8 @@
     --corbgEscuroClaro: rgb(53, 56, 223);
     --corbgEscuro: rgb(44, 46, 158);
     --corSegundariaBg: rgba(253, 255, 255);
-    --corTerciaruaBg: rgba(240, 244, 247);
+    --corTerciaruaBg: rgb(230, 245, 255);
+
 }
 
 body{
@@ -101,6 +102,7 @@ body{
     }
 
     #container-tot-compra{
+        font-size: 14px;
         margin: 0 auto;
         width: 90%;
         display: flex;
@@ -117,9 +119,9 @@ body{
 
     #item-compra{
         height: 240px;
-        width: 90%;
-        background-color: rgb(248, 248, 248);
-        box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.24);
+        width: 92%;
+        /* background-color: var(--corTerciaruaBg); */
+        border:  1px solid var(--corBgPadrao);
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -135,7 +137,7 @@ body{
     }
 
     .div-info-produto p, span{
-        color: rgb(64, 136, 230);
+        color: var(--corBgPadrao);
         font-weight: bold;
     }
 
@@ -145,22 +147,34 @@ body{
         margin-bottom: 8px;
         border: none;
         border-radius: 6px;
-        background-color: rgb(228, 228, 228);
+        background-color: var(--corSegundariaBg);
+        border: 3px solid rgba(0, 0, 0, 0.096);
         padding-left: 12px;
         font-size: 16px;
     }
 
+    .div-style-input-compra{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .div-style-input-compra label{
+        color: rgba(0, 0, 0, 0.658);
+    }
+    
+
     .div-info-produto{
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         padding-bottom: 10px;
         border-bottom: 2px solid rgba(0, 0, 0, 0.13);
-        
     }
 
     #button-sbumit{
         height: 36px;
+        width: 92%;
+        margin: 0 auto;
         border-radius: 6px;
         border: none;
         margin-bottom: 20px;
@@ -274,8 +288,7 @@ body{
         width: 80%;
         padding: 20px 0px 20px 0px;
         margin: auto;
-        background-color: rgb(248, 248, 248);
-        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.199);
+        border: 1px solid var(--corBgPadrao);
         border-radius: 10px;
         display: flex;
         align-items: center;

@@ -19,7 +19,7 @@ const mostrarProdutosCompra = () => {
                 <div class="div-info-produto">
                     <div class="info-produto">
                         <h3>${produto.nome}</h3>
-                        <p>falta comprar: <span class="quantidade-faltante">${produto.quantidadeNecessaria}</span></p>
+                        <p>Falta comprar: <span class="quantidade-faltante">${produto.quantidadeNecessaria}</span></p>
                     </div>
                     <p>Total Item R$: <span class="valor-total-item">0.00</span></p>
                 </div>

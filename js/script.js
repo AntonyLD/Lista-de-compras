@@ -5,13 +5,15 @@ const formularioProduto = document.querySelector("#formulario-produto")
 const listaDeProdutos = document.querySelector("#lista-de-produtos")
 const btnComprar = document.querySelector("#btn-comprar")
 
-
 const mostrarProdutos = () =>{
     listaDeProdutos.innerHTML = "";
 
     const produtos = JSON.parse(localStorage.getItem("produtos")) || []
 
     produtos.forEach((produto) => {
+        const status = calcularStatus(produto)
+        const visual = getVisualStatus(status);
+
         const item = document.createElement("div")
         item.id = "item-lista"
         item.innerHTML = 
@@ -22,7 +24,7 @@ const mostrarProdutos = () =>{
                         <p class="nome-produto">${produto.nome}</p>
                         <p class="qtd-nes-produto">Total necessário: ${produto.quantidadeNecessaria}</p>
                         <p class="qtd-comprada-produto">Total comprado: ${produto.quantidadeComprada}</p>
-                        <p class="status-produto">Pendente</p>
+                        <p class="status-produto ${visual.classe}">${visual.texto}</p>
                     </div>
                     <div class="div-btn-produto">
                         <button onclick="editarProdutos(${produto.id})">Editar</button>
@@ -34,6 +36,7 @@ const mostrarProdutos = () =>{
         `
         listaDeProdutos.appendChild(item)
     });
+    
 }
 
 const cadastrar = () =>{
@@ -90,6 +93,27 @@ const editarProdutos = (id) => {
     produtoEmEdicao = id
     btnCadastrar.textContent = "Salvar";
 }
+
+const calcularStatus = (produto) =>{
+    return produto.quantidadeComprada >= produto.quantidadeNecessaria
+        ? "comprado" : "pendente" ;
+
+}
+
+function getVisualStatus(status) {
+    const map = {
+        comprado: {
+        texto: "Comprado",
+        classe: "status-comprado"
+        },
+        pendente: {
+        texto: "Pendente",
+        classe: "status-pendente"
+        }
+    };
+
+    return map[status];
+    }
 
 formularioProduto.addEventListener("submit", (e) =>{
     e.preventDefault()
