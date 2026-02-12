@@ -15,8 +15,8 @@
     --corSegundariaBg: rgba(253, 255, 255);
     --corTerciaruaBg: rgb(230, 245, 255);
     --corBtnApagar:rgba(211, 27, 27, 0.89);--corStatusPendente: rgba(255, 59, 59, 0.89);
-    --corStatusParcial: ;
-    --corStatusConcluido: ;
+    
+    --corStatusConcluido: rgb(1, 221, 100);
 }
 
 

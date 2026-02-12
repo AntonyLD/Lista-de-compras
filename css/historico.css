@@ -13,10 +13,12 @@
     --corbgEscuroClaro: rgb(53, 56, 223);
     --corbgEscuro: rgb(44, 46, 158);
     --corSegundariaBg: rgba(253, 255, 255);
-    --corTerciaruaBg: rgb(230, 245, 255);
+    --corHoverHistorico: rgba(87, 193, 255, 0.171);
+    --corTextoP: rgba(0, 0, 0, 0.658);
     --corBtnApagar:rgba(211, 27, 27, 0.89);
     --corStatusPendente: rgba(255, 59, 59, 0.89);
-    --corStatusConcluido: ;
+    --corStatusConcluido: rgb(1, 221, 100) ;
+    --corDeletar: rgba(255, 59, 59, 0.247) ;
 }
 
     
@@ -133,8 +135,18 @@
         border: 1px solid var(--corBgPadrao);
         border-radius: 10px;
         width: 80%;
-        min-height: 40px;
-        padding: 30px 0px 30px 0px;
+        padding: 20px 0px 20px 0px;
+        transition: 0.3s;
+        
+    }
+
+    .div-info-compras:hover{
+        cursor: pointer;
+        background-color: var(--corHoverHistorico);
+    }
+
+    .div-info-compras p{
+        color: var(--corTextoP);
     }
 
     .info-historico-compra{
@@ -146,23 +158,64 @@
 
     .div-info-tot-compra{
         display: flex;
+        gap: 10px;
     }
 
     .tot-compra-icon{
         display: flex;
+        align-items: center;
+        gap: 10px;
+        
+    }
+
+    .bnt-deletar{
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        height: 36px;
+        padding: 6px;
+        border-radius: 6px;
+        transition: 0.5s;
+    }
+
+    .bnt-deletar:hover{
+        cursor: pointer;
+        background-color: var(--corDeletar);
     }
 
     .info-itens-comprados{
         width: 90%;
-        
         /* display: none; */
+
     }
 
     .div-info-produtos{
         display: flex;
         justify-content: space-around;
+        align-items: flex-end;
         padding: 20px 0px 20px 0px;
         width: 100%;
         border: 1px solid var(--corBgPadrao);
+        background-color: var(--corSegundariaBg);
         border-radius: 10px;
+    }
+
+    .info-pro-necess p:first-child{
+        margin-bottom: 10px;
+        font-weight: bolder;
+    }
+
+    .valores{
+        color: black;
+        font-weight: bolder;
+    }
+
+    .check-compra{
+        width: 40px;
+        border-radius: 20px;
+        align-self: flex-start;
+        background-color:var(--corStatusConcluido);
+    }
+
+    .check-compra img{
+        padding-left: 8px;
     }
