@@ -119,11 +119,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 30px;
     }
 
     #div-titulo{
         width: 80%;
-        height: 80px;
+        height: 60px;
+        display: flex;
+        align-items: self-end;
     }
 
     .div-info-compras{

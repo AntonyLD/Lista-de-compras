@@ -1,37 +1,36 @@
-const contaierInfoCompras = document.querySelector(".contaier-info-compra")
-const infoItensComprados = document.querySelector(".div-info-compras")
-const divInfoProdutos = document.querySelector(".info-itens-comprados-ocultar")
+const contaierInfoCompras = document.querySelector("#contaier-info-compra")
+// const infoItensComprados = document.querySelector(".div-info-compras")
+// const divInfoProdutos = document.querySelector(".info-itens-comprados-ocultar")
 
 
 const mostrarHistoricoCompras = () =>{
-    infoItensComprados.innerHTML = ""
     
     const historicoCompras = JSON.parse(localStorage.getItem("compras")) || [];
 
     historicoCompras.forEach((compra) => {
         const containerItens = document.createElement("div");
-        containerItens.className = "info-itens-comprados";
+        containerItens.className = "div-info-compras";
 
         const infoCompra = document.createElement("div")
-        infoCompra.className = "info-itens-comprados-ocultar"
+        infoCompra.className = "info-historico-compra"
         infoCompra.innerHTML = `
-            
-                <div class="info-historico-compra">
+
                     <div>
                         <h3 class="data-compra">${compra.data}</h3>
                     </div>
                     <div class="div-info-tot-compra">
                         <div>
                             <p>Total</p>
-                            <h2 class="valor-tot-compra">${compra.totalCompra}</h2>
+                            <h2 class="valor-tot-compra">R$ ${compra.totalCompra}</h2>
                         </div>
                         <div class="tot-compra-icon">
                             <button class="bnt-deletar"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff3b3b"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>
                             <img src="../img/Setinha.png" alt="">
                         </div>
                     </div>
-                </div>
         `
+        containerItens.appendChild(infoCompra)
+
         compra.itens.forEach((item) =>{
             const infoProduto = document.createElement("div")
             infoProduto.className = "info-itens-comprados"
@@ -62,17 +61,14 @@ const mostrarHistoricoCompras = () =>{
             `
             
             containerItens.appendChild(infoProduto);
+            console.log(containerItens)
         })
 
-        
-        infoCompra.appendChild(containerItens);
-
-        contaierInfoCompras.appendChild(infoCompra);
-
+        contaierInfoCompras.appendChild(containerItens)
     });
     
 }
-mostrarHistoricoCompras()
+    mostrarHistoricoCompras()
 // infoItensComprados.addEventListener("click", () => {
     
 // })
