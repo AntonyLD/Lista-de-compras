@@ -187,7 +187,8 @@
     }
 
     .info-itens-comprados-ocultar{
-        display: none;
+        /* display: none; */
+        width: 90%;
     }
 
     .div-info-produtos{
