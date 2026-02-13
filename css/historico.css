@@ -184,8 +184,10 @@
 
     .info-itens-comprados{
         width: 90%;
-        /* display: none; */
+    }
 
+    .info-itens-comprados-ocultar{
+        display: none;
     }
 
     .div-info-produtos{
@@ -199,13 +201,13 @@
         border-radius: 10px;
     }
 
-    .info-pro-necess p:first-child{
-        margin-bottom: 10px;
+    .div-info-produtos p:last-child{
+        color: black;
         font-weight: bolder;
     }
 
-    .valores{
-        color: black;
+    .info-pro-necess p:first-child{
+        margin-bottom: 10px;
         font-weight: bolder;
     }
 
