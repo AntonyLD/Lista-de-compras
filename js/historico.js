@@ -1,7 +1,4 @@
 const contaierInfoCompras = document.querySelector("#contaier-info-compra")
-// const infoItensComprados = document.querySelector(".div-info-compras")
-// const divInfoProdutos = document.querySelector(".info-itens-comprados-ocultar")
-
 
 const mostrarHistoricoCompras = () =>{
     
@@ -13,8 +10,20 @@ const mostrarHistoricoCompras = () =>{
 
         const infoCompra = document.createElement("div")
         infoCompra.className = "info-historico-compra"
-        infoCompra.innerHTML = `
 
+        containerItens.addEventListener("click", (e) => {
+
+            if (e.target.closest(".bnt-deletar")) return;
+
+            const produtos = containerItens.querySelectorAll(".info-itens-comprados");
+
+            produtos.forEach(produto => {
+                produto.classList.toggle("ativo");
+            });
+
+        });
+
+        infoCompra.innerHTML = `
                     <div>
                         <h3 class="data-compra">${compra.data}</h3>
                     </div>
@@ -61,7 +70,7 @@ const mostrarHistoricoCompras = () =>{
             `
             
             containerItens.appendChild(infoProduto);
-            console.log(containerItens)
+            
         })
 
         contaierInfoCompras.appendChild(containerItens)
@@ -69,7 +78,4 @@ const mostrarHistoricoCompras = () =>{
     
 }
     mostrarHistoricoCompras()
-// infoItensComprados.addEventListener("click", () => {
-    
-// })
 

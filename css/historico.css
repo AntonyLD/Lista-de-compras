@@ -186,20 +186,23 @@
     }
 
     .info-itens-comprados{
+        display: none;
         width: 90%;
     }
 
-    .info-itens-comprados-ocultar{
-        /* display: none; */
+    .info-itens-comprados.ativo{
+        display: block;
         width: 90%;
+        
     }
+
 
     .div-info-produtos{
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
         padding: 20px 0px 20px 0px;
-        width: 100%;
+        width: 99%;
         border: 1px solid var(--corBgPadrao);
         background-color: var(--corSegundariaBg);
         border-radius: 10px;
