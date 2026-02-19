@@ -5,7 +5,7 @@ const formularioProduto = document.querySelector("#formulario-produto")
 const listaDeProdutos = document.querySelector("#lista-de-produtos")
 const btnComprar = document.querySelector("#btn-comprar")
 
-const mostrarProdutos = () =>{
+const mostrarProdutos = () =>{ 
     listaDeProdutos.innerHTML = "";
 
     const produtos = JSON.parse(localStorage.getItem("produtos")) || []

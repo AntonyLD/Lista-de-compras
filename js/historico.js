@@ -2,9 +2,20 @@ const contaierInfoCompras = document.querySelector("#contaier-info-compra")
 
 const mostrarHistoricoCompras = () =>{
     
+    
     const historicoCompras = JSON.parse(localStorage.getItem("compras")) || [];
 
+    const listaAntiga = contaierInfoCompras.querySelector(".lista-historico-compras");
+    if (listaAntiga) {
+        listaAntiga.remove();
+    }
+
+    const containerListHistoricoCompra = document.createElement("div")
+    containerListHistoricoCompra.className = "lista-historico-compras"
+    containerListHistoricoCompra.innerHTML = "";
+
     historicoCompras.forEach((compra) => {
+
         const containerItens = document.createElement("div");
         containerItens.className = "div-info-compras";
 
@@ -40,6 +51,13 @@ const mostrarHistoricoCompras = () =>{
         `
         containerItens.appendChild(infoCompra)
 
+        const btnDeletar = infoCompra.querySelector(".bnt-deletar");
+        
+        btnDeletar.addEventListener("click", (e) =>{
+            e.stopPropagation();
+            deletarCompra(compra.id)
+        })
+
         compra.itens.forEach((item) =>{
             const infoProduto = document.createElement("div")
             infoProduto.className = "info-itens-comprados"
@@ -68,14 +86,23 @@ const mostrarHistoricoCompras = () =>{
                                 </div>
                             </div>
             `
-            
+
             containerItens.appendChild(infoProduto);
             
         })
 
-        contaierInfoCompras.appendChild(containerItens)
+        containerListHistoricoCompra.appendChild(containerItens)
+        contaierInfoCompras.appendChild(containerListHistoricoCompra)
     });
     
+}
+
+const deletarCompra = (id) =>{
+    const historicoCompras = JSON.parse(localStorage.getItem("compras")) || []
+    const novoHistirico = historicoCompras.filter(compra => compra.id !== id)
+
+    localStorage.setItem("compras", JSON.stringify(novoHistirico))
+    mostrarHistoricoCompras();
 }
     mostrarHistoricoCompras()
 

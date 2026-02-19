@@ -129,6 +129,15 @@
         align-items: self-end;
     }
 
+    .lista-historico-compras{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }   
+
     .div-info-compras{
         display: flex;
         flex-direction: column;
@@ -140,7 +149,7 @@
         width: 80%;
         padding: 20px 0px 20px 0px;
         transition: 0.3s;
-        
+        position: relative;
     }
 
     .div-info-compras:hover{
@@ -186,16 +195,19 @@
     }
 
     .info-itens-comprados{
-        display: none;
         width: 90%;
+        height: 0px;
+        opacity: 0;
+        transition: 0.5s;
     }
 
     .info-itens-comprados.ativo{
         display: block;
+        height: 110px;
         width: 90%;
-        
+        opacity: 1;
+        transition: 0.5s;
     }
-
 
     .div-info-produtos{
         display: flex;

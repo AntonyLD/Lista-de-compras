@@ -3,7 +3,7 @@ const formCompra = document.querySelector("#form-compra");
 const historico = document.querySelector("#historico");
 const valorTot = document.querySelector("#valor-total-compra");
 
-let itensCompra = [];
+let itensCompra = []; 
 
 const mostrarProdutosCompra = () => {
     listCompra.innerHTML = "";
@@ -49,6 +49,8 @@ const mostrarProdutosCompra = () => {
             produtoId: produto.id,
             nome: produto.nome,
             valorUnitario: 0,
+            quantidadeComprada: 0,
+            totalItem: 0
         };
 
         const atualizarItem = () => {
@@ -103,7 +105,7 @@ const calcularQuantidadeItem = (qtdCadastrada, qtdComprada) =>{
 }
 
 const calcularTotalCompra = (itens) => {
-    return itens.reduce((acc, item) => acc + item.totalItem, 0);
+    return itens.reduce((acc, item) => acc + (item.totalItem || 0), 0);
 };
 
 const atualizarTotalCompra = () => {
@@ -152,6 +154,7 @@ formCompra.addEventListener("submit", (e) => {
 
     alert("Compra salva com sucesso!");
     formCompra.reset()
+    mostrarProdutosCompra();
 });
 
 document.addEventListener("DOMContentLoaded", mostrarProdutosCompra);
