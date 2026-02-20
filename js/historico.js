@@ -4,6 +4,7 @@ const mostrarHistoricoCompras = () =>{
     
     
     const historicoCompras = JSON.parse(localStorage.getItem("compras")) || [];
+    const itemCadastro = JSON.parse(localStorage.getItem("produtos")) || []
 
     const listaAntiga = contaierInfoCompras.querySelector(".lista-historico-compras");
     if (listaAntiga) {
@@ -58,7 +59,13 @@ const mostrarHistoricoCompras = () =>{
             deletarCompra(compra.id)
         })
 
+
         compra.itens.forEach((item) =>{
+
+            const produtoOriginal = itemCadastro.find(
+                p => p.id === item.produtoId
+            )
+
             const infoProduto = document.createElement("div")
             infoProduto.className = "info-itens-comprados"
 
@@ -67,7 +74,7 @@ const mostrarHistoricoCompras = () =>{
                                 <div class="info-pro-necess">
                                     <p class="nome-produto-comprado">${item.nome}</p>
                                     <p>Necessário</p>
-                                    <p class="qtd-necessaria">18</p>
+                                    <p class="qtd-necessaria">${produtoOriginal ? produtoOriginal.quantidadeNecessaria : 0}</p>
                                 </div>
                                 <div>
                                     <p>Comprado</p>
@@ -88,6 +95,7 @@ const mostrarHistoricoCompras = () =>{
             `
 
             containerItens.appendChild(infoProduto);
+            
             
         })
 

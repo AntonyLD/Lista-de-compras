@@ -4,51 +4,262 @@
     font-family: "Roboto", sans-serif;
     text-decoration: none;
     color: rgb(0, 0, 0);
-} 
+    } 
 
-:root{
-    --corBgPadrao: rgba(64, 67, 201);
-    --corBgPadrao2:rgb(79, 81, 255);
-    --corBgPadraoClaro: rgb(77, 80, 253);
-    --corbgEscuroClaro: rgb(53, 56, 223);
-    --corbgEscuro: rgb(44, 46, 158);
-    --corSegundariaBg: rgba(253, 255, 255);
-    --corHoverHistorico: rgba(87, 193, 255, 0.171);
-    --corTextoP: rgba(0, 0, 0, 0.658);
-    --corBtnApagar:rgba(211, 27, 27, 0.89);
-    --corStatusPendente: rgba(255, 59, 59, 0.89);
-    --corStatusConcluido: rgb(1, 221, 100) ;
-    --corDeletar: rgba(255, 59, 59, 0.247) ;
-}
+    :root{
+        --corBgPadrao: rgba(64, 67, 201);
+        --corBgPadrao2:rgb(79, 81, 255);
+        --corBgPadraoClaro: rgb(77, 80, 253);
+        --corbgEscuroClaro: rgb(53, 56, 223);
+        --corbgEscuro: rgb(44, 46, 158);
+        --corSegundariaBg: rgba(253, 255, 255);
+        --corHoverHistorico: rgba(87, 193, 255, 0.171);
+        --corTextoP: rgba(0, 0, 0, 0.658);
+        --corBtnApagar:rgba(211, 27, 27, 0.89);
+        --corStatusPendente: rgba(255, 59, 59, 0.89);
+        --corStatusConcluido: rgb(1, 221, 100) ;
+        --corDeletar: rgba(255, 59, 59, 0.247) ;
+    }
 
     
     body{
         background-color: var(--corBgPadrao);
     }
 
+    @media (min-width: 1025px){
+        main{
+            margin:  0 auto;
+            width: 82%;
+            max-width: 800px;
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #box-nav{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+
+        #titulo-lista{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 130px;
+            position: relative;
+        }
+
+        #titulo-lista h2{
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--corSegundariaBg);
+            font-size: 50px;
+        }
+
+        #formulario-produto{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 280px;
+            min-height: 280px;
+            width: 100%;
+            background-color: var(--corSegundariaBg);
+            border-radius: 26px 26px 0px 0px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+        }
+
+        #div-button-nav{
+            width: 100%;
+            height: 70px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #div-button-nav button{
+            height: 100%;
+            width: 28%;
+            font-size: 18px;
+            border-radius: 6px 6px 0px 0px;
+            background-color: var(--corbgEscuro);
+            border: none;
+            color: var(--corSegundariaBg);
+        }
+
+        #div-button-nav button a{
+            color: var(--corSegundariaBg);
+        }
+
+        #btn-historico{
+            background-color: var(--corSegundariaBg) !important;
+        }
+        #btn-historico a:visited{
+            color: var(--corBgPadrao);
+        }
+
+        #div-titulo{
+            width: 83%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        #contaier-info-compra{
+            background-color: var(--corSegundariaBg);
+            width: 100%;
+            max-width: 800px;
+            border-radius: 26px;
+            padding-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        #div-titulo{
+            width: 80%;
+            height: 60px;
+            display: flex;
+            align-items: self-end;
+        }
+
+        .lista-historico-compras{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column-reverse;
+            gap: 20px;
+        }   
+
+        .div-info-compras{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--corBgPadrao);
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px 0px 20px 0px;
+            transition: 0.3s;
+            
+        }
+
+        .div-info-compras:hover{
+            cursor: pointer;
+            background-color: var(--corHoverHistorico);
+        }
+
+        .div-info-compras p{
+            color: var(--corTextoP);
+        }
+
+        .info-historico-compra{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+        }
+
+        .div-info-tot-compra{
+            display: flex;
+            gap: 10px;
+        }
+
+        .tot-compra-icon{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bnt-deletar{
+            border: none;
+            background-color: rgba(255, 255, 255, 0);
+            height: 36px;
+            padding: 6px;
+            border-radius: 6px;
+            transition: 0.5s;
+        }
+
+        .bnt-deletar:hover{
+            cursor: pointer;
+            background-color: var(--corDeletar);
+        }
+
+        .info-itens-comprados{
+            height: 0;
+            padding: 0;
+            width: 90%;
+            height: 0px;
+            opacity: 0;
+            transition: 0.5s;
+            overflow: hidden;
+        }
+
+        .info-itens-comprados.ativo{
+            height: 110px;
+            margin-top: 16px;
+            width: 90%;
+            opacity: 1;
+        }
+
+        .div-info-produtos{
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            padding: 20px 0px 20px 0px;
+            width: 99%;
+            border: 1px solid var(--corBgPadrao);
+            background-color: var(--corSegundariaBg);
+            border-radius: 10px;
+        }
+
+        .div-info-produtos p:last-child{
+            color: black;
+            font-weight: bolder;
+        }
+
+        .info-pro-necess p:first-child{
+            margin-bottom: 10px;
+            font-weight: bolder;
+        }
+
+        .check-compra{
+            width: 40px;
+            border-radius: 20px;
+            align-self: flex-start;
+            background-color:var(--corStatusConcluido);
+        }
+
+        .check-compra img{
+            padding-left: 8px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+
     main{
         margin:  0 auto;
-        width: 82%;
-        max-width: 800px;
-        min-height: 100dvh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #box-nav{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         width: 100%;
-    }
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        }
 
-    #titulo-lista{
+            #titulo-lista{
         display: flex;
         justify-content: center;
         align-items: center;
         height: 130px;
         position: relative;
+        
     }
 
     #titulo-lista h2{
@@ -59,184 +270,156 @@
         font-size: 50px;
     }
 
-    #formulario-produto{
+    #box-nav{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 280px;
-        min-height: 280px;
-        width: 100%;
-        background-color: var(--corSegundariaBg);
-        border-radius: 26px 26px 0px 0px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.171);
-    }
-
-    #div-button-nav{
-        width: 100%;
-        height: 70px;
-        border-radius: 10px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    #div-button-nav button{
-        height: 100%;
-        width: 28%;
-        font-size: 18px;
-        border-radius: 6px 6px 0px 0px;
-        background-color: var(--corbgEscuro);
-        border: none;
-        color: var(--corSegundariaBg);
-    }
-
-    #div-button-nav button a{
-        color: var(--corSegundariaBg);
-    }
-
-    #btn-historico{
-        background-color: var(--corSegundariaBg) !important;
-    }
-    #btn-historico a:visited{
-        color: var(--corBgPadrao);
-    }
-
-    #div-titulo{
-        width: 83%;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
-
-    #contaier-info-compra{
-        background-color: var(--corSegundariaBg);
-        width: 100%;
+        gap: 10px;
+        min-width: 280px;
         max-width: 800px;
-        border-radius: 26px;
-        padding-bottom: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+        height: 200px;
     }
 
-    #div-titulo{
-        width: 80%;
-        height: 60px;
-        display: flex;
-        align-items: self-end;
-    }
+        #div-button-nav{
+            width: 100%;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
 
-    .lista-historico-compras{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column-reverse;
-        gap: 20px;
-    }   
+        #div-button-nav button{
+            height: 100%;
+            width: 28%;
+            font-size: 18px;
+            border-radius: 6px 6px 0px 0px;
+            background-color: var(--corbgEscuro);
+            border: none;
+            color: var(--corSegundariaBg);
+        }
 
-    .div-info-compras{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--corBgPadrao);
-        border-radius: 10px;
-        width: 80%;
-        padding: 20px 0px 20px 0px;
-        transition: 0.3s;
-        
-    }
+            #div-button-nav button a{
+        color: var(--corSegundariaBg);
+        }
 
-    .div-info-compras:hover{
-        cursor: pointer;
-        background-color: var(--corHoverHistorico);
-    }
+        #btn-historico{
+            background-color: var(--corSegundariaBg) !important;
+        }
 
-    .div-info-compras p{
-        color: var(--corTextoP);
-    }
+        #btn-historico a:visited{
+            color: var(--corBgPadrao) !important;
+        }
 
-    .info-historico-compra{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 90%;
-    }
+        #contaier-info-compra{
+            background-color: var(--corSegundariaBg);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .div-info-tot-compra{
-        display: flex;
-        gap: 10px;
-    }
+        #div-titulo{
+            width: 90%;
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
+        }
 
-    .tot-compra-icon{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+        .lista-historico-compras{
+            width: 90%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
 
-    .bnt-deletar{
-        border: none;
-        background-color: rgba(255, 255, 255, 0);
-        height: 36px;
-        padding: 6px;
-        border-radius: 6px;
-        transition: 0.5s;
-    }
+        .div-info-compras{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--corBgPadrao);
+            border-radius: 10px;
+            width: 90%;
+            padding: 20px 0px 20px 0px;
+            transition: 0.3s;
+        }
 
-    .bnt-deletar:hover{
-        cursor: pointer;
-        background-color: var(--corDeletar);
-    }
+        .info-historico-compra{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+        }
 
-    .info-itens-comprados{
-        height: 0;
-        padding: 0;
-        width: 90%;
-        height: 0px;
-        opacity: 0;
-        transition: 0.5s;
-        overflow: hidden;
-    }
+                .div-info-tot-compra{
+            display: flex;
+            gap: 10px;
+        }
 
-    .info-itens-comprados.ativo{
-        height: 110px;
-        margin-top: 16px;
-        width: 90%;
-        opacity: 1;
-    }
+        .tot-compra-icon{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .div-info-produtos{
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-        padding: 20px 0px 20px 0px;
-        width: 99%;
-        border: 1px solid var(--corBgPadrao);
-        background-color: var(--corSegundariaBg);
-        border-radius: 10px;
-    }
+        .bnt-deletar{
+            border: none;
+            background-color: rgba(255, 255, 255, 0);
+            height: 36px;
+            padding: 6px;
+            border-radius: 6px;
+            transition: 0.5s;
+        }
 
-    .div-info-produtos p:last-child{
-        color: black;
-        font-weight: bolder;
-    }
+                .info-itens-comprados{
+            height: 0;
+            padding: 0;
+            width: 90%;
+            height: 0px;
+            opacity: 0;
+            transition: 0.5s;
+            overflow: hidden;
+        }
 
-    .info-pro-necess p:first-child{
-        margin-bottom: 10px;
-        font-weight: bolder;
-    }
+        .info-itens-comprados.ativo{
+            height: 110px;
+            margin-top: 16px;
+            width: 90%;
+            opacity: 1;
+        }
 
-    .check-compra{
-        width: 40px;
-        border-radius: 20px;
-        align-self: flex-start;
-        background-color:var(--corStatusConcluido);
-    }
+        .div-info-produtos{
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            padding: 20px 0px 20px 0px;
+            width: 99%;
+            border: 1px solid var(--corBgPadrao);
+            background-color: var(--corSegundariaBg);
+            border-radius: 10px;
+        }
 
-    .check-compra img{
-        padding-left: 8px;
-    }
+        .div-info-produtos p:last-child{
+            color: black;
+            font-weight: bolder;
+        }
+
+        .info-pro-necess p:first-child{
+            margin-bottom: 10px;
+            font-weight: bolder;
+        }
+
+        .check-compra{
+            width: 40px;
+            border-radius: 20px;
+            align-self: flex-start;
+            background-color:var(--corStatusConcluido);
+        }
+
+        .check-compra img{
+            padding-left: 8px;
+        }
+
+}
