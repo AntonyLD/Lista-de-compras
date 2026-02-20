@@ -71,22 +71,26 @@ const mostrarHistoricoCompras = () =>{
 
             infoProduto.innerHTML = `
                             <div class="div-info-produtos">
-                                <div class="info-pro-necess">
-                                    <p class="nome-produto-comprado">${item.nome}</p>
-                                    <p>Necessário</p>
-                                    <p class="qtd-necessaria">${produtoOriginal ? produtoOriginal.quantidadeNecessaria : 0}</p>
+                                <div class="container-mobile1">
+                                    <div class="info-pro-necess">
+                                        <p class="nome-produto-comprado">${item.nome}</p>
+                                        <p>Necessário</p>
+                                        <p class="qtd-necessaria">${produtoOriginal ? produtoOriginal.quantidadeNecessaria : 0}</p>
+                                    </div>
+                                    <div>
+                                        <p>Comprado</p>
+                                        <p class="qtd-comprada" >${item.quantidadeComprada}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p>Comprado</p>
-                                    <p class="qtd-comprada" >${item.quantidadeComprada}</p>
-                                </div>
-                                <div>
-                                    <p>Valor Unitário</p>
-                                    <p class="valor-unitario"> R$ ${item.valorUnitario}</p>
-                                </div>
-                                <div>
-                                    <p>Valor Total</p>
-                                    <p class="total-unitario">R$ ${item.totalItem}</p>
+                                <div class="container-mobile2">
+                                    <div>
+                                        <p>Valor Unitário</p>
+                                        <p class="valor-unitario"> ${formatarMoeda(item.valorUnitario)}</p>
+                                    </div>
+                                    <div>
+                                        <p>Valor Total</p>
+                                        <p class="total-unitario">${formatarMoeda(item.totalItem)}</p>
+                                    </div>
                                 </div>
                                 <div class="check-compra">
                                     <img src="../img/check.png" alt="">
